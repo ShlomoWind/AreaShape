@@ -46,17 +46,19 @@ class ShapeManager:
                             print("Please create at least two shapes first.")
                             continue
                         print("Available shapes:")
-                        for index,shape in enumerate(shape_list):
-                            print(f"{index + 1}. {shape}")
+                        print("-----------------------------------")
+                        for index,s in enumerate(shape_list):
+                            print(f"{index + 1}. {s.__class__.__name__} - Area: {s.get_area()}, Perimeter: {s.get_perimeter()}")
+                        print("-----------------------------------")
                         try:
-                            first_index = int(input("Select the first shape by number: ")) - 1
-                            second_index = int(input("Select the second shape by number: ")) - 1
+                            first_index = int(input("Select the first shape: ")) - 1
+                            second_index = int(input("Select the second shape: ")) - 1
                             if not(0 <= first_index < len(shape_list)) or not(0 <= second_index < len(shape_list)):
                                 print("Invalid selection. Please try again.")
                                 continue
                             s1 = shape_list[first_index]
                             s2 = shape_list[second_index]
-                            op = input("Choose an operation: (+, -, *, ==, !=, <, >, <=, >=)")
+                            op = input("Choose an operation: (+, -, *, ==, !=, <, >, <=, >=)\nEnter your choice: ")
                             result = None
                             match op:
                                 case "+":
@@ -80,7 +82,7 @@ class ShapeManager:
                                 case _:
                                     print("Invalid operation. Please try again.")
                                     continue
-                            print(f"Result of {s1} {op} {s2} is: {result}")
+                            print(f"\nResult of {s1.__class__.__name__} {op} {s2.__class__.__name__} is: {result}")
                         except (ValueError, IndexError) as e:
                             print(f"Error: {e}. Please select valid shapes and operations.")
                             continue
