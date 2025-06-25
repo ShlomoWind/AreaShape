@@ -9,4 +9,4 @@ class Shape(ABC):
         pass
 
     def __str__(self):
-        return f"the area from the {self.__class__.__name__} is {self.get_area()} and the primeter is {self.get_primeter()}"
+        return f"the area from the {self.__class__.__name__} is {self.get_area()} and the perimeter is {self.get_perimeter()}"
