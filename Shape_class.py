@@ -5,5 +5,8 @@ class Shape(ABC):
     def get_area(self):
         pass
 
+    def get_primeter(self):
+        pass
+
     def __str__(self):
         return f"the area from the {self.__class__.__name__} is {self.get_area()}"
