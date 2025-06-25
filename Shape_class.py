@@ -5,7 +5,7 @@ class Shape(ABC):
     def get_area(self):
         pass
     @abstractmethod
-    def get_primeter(self):
+    def get_perimeter(self):
         pass
 
     def __str__(self):

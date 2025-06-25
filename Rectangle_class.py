@@ -1,7 +1,10 @@
+from Exception_class import CheckNumbers
 from Shape_class import Shape
 
 class Rectangle(Shape):
     def __init__(self,width,height):
+        CheckNumbers.correct_numbers(width,"width")
+        CheckNumbers.correct_numbers(height,"height")
         self.width = width
         self.height = height
 

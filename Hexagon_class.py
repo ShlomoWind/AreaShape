@@ -1,8 +1,10 @@
 from Shape_class import Shape
+from Exception_class import CheckNumbers
 import math
 
 class Hexagon(Shape):
     def __init__(self, side):
+        CheckNumbers.correct_numbers(side,"side")
         self.side = side
 
     def get_area(self):
