@@ -4,9 +4,9 @@ class Shape(ABC):
     @abstractmethod
     def get_area(self):
         pass
-
+    @abstractmethod
     def get_primeter(self):
         pass
 
     def __str__(self):
-        return f"the area from the {self.__class__.__name__} is {self.get_area()}"
+        return f"the area from the {self.__class__.__name__} is {self.get_area()} and the primeter is {self.get_primeter()}"
